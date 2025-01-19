@@ -4,7 +4,6 @@ import time
 
 # URL of the video feed
 video_url = 'http://rpiz2-2:5000/video_feed'
-saved_folder = 'Z:/recording/'
 
 RECORDING_TIMEOUT = 5
 
@@ -76,7 +75,7 @@ while True:
     if movement_detected:
         if not recording:
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            out = cv2.VideoWriter(f'{saved_folder}movement_{timestamp}.avi', fourcc, 20.0, (frame2.shape[1], frame2.shape[0]))
+            out = cv2.VideoWriter(f'movement_{timestamp}.avi', fourcc, 20.0, (frame2.shape[1], frame2.shape[0]))
             recording = True
         last_movement_time = time.time()
 
